@@ -18,35 +18,42 @@ namespace QuebraNum
                 int numero = Convert.ToInt32(Console.ReadLine()); // recebe o numero
                 List<int[]> resultado = new List<int[]>();
                 resultado = Quebra(numero);
-                List<int[]> transitor = new List<int[]>(resultado);
                 
+
+                resultado = CompararListas(resultado);
+                resultado = resultado.OrderByDescending(x => x.Last()).ToList();
                 foreach (var item in resultado)
-                {
-                    int i = 0;
-                    foreach (var subitem in resultado)
-                    {
-                        
-                        if (item.SequenceEqual(subitem))
-                        {
-                            i++;
-                        }
-                        if (i> 1)
-                        {
-                            transitor.Remove(subitem);
-                            i--;
-                        }
-                    }
-                }
-                foreach (var item in transitor)
                 {
 
                     Console.WriteLine("[{0}]", string.Join(", ", item));
-                    
+
                 }
-                
+
             }
         }
-  
+
+        private static List<int[]> CompararListas(List<int[]> resultado)
+        {
+            List<int[]> transitor = new List<int[]>(resultado);
+            foreach (var item in resultado)
+            {
+                int i = 0;
+                foreach (var subitem in resultado)
+                {
+
+                    if (item.SequenceEqual(subitem))
+                    {
+                        i++;
+                    }
+                    if (i > 1)
+                    {
+                        transitor.Remove(subitem);
+                        i--;
+                    }
+                }
+            }
+            return transitor;
+        }
 
         public static List<int[]> Quebra(int quebrado)
         {
@@ -100,10 +107,11 @@ namespace QuebraNum
 
             foreach (var item in resultado)
             {
-                Array.Sort(item);
+
+                Array.Sort(item, (x, y) => x.CompareTo(y));
             }
-
-
+            //resultado = resultado.OrderByDescending(x => x.Last()).ToList();
+            resultado = CompararListas(resultado);
             return resultado;
         }
         public static int GetMedia(int quebra)
