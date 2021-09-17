@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuebraNum", "QuebraNum\QuebraNum.csproj", "{A743BBFC-B0F5-44AB-AC55-429E0D2D1D73}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A743BBFC-B0F5-44AB-AC55-429E0D2D1D73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A743BBFC-B0F5-44AB-AC55-429E0D2D1D73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A743BBFC-B0F5-44AB-AC55-429E0D2D1D73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A743BBFC-B0F5-44AB-AC55-429E0D2D1D73}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F249B8A1-7E7A-4F99-AB6D-B4B53394C7EE}
+	EndGlobalSection
+EndGlobal
