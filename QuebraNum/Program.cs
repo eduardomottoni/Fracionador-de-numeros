@@ -14,20 +14,39 @@ namespace QuebraNum
             for (; ; )
             {
 
-
                 Console.WriteLine("Digite um número");
                 int numero = Convert.ToInt32(Console.ReadLine()); // recebe o numero
                 List<int[]> resultado = new List<int[]>();
                 resultado = Quebra(numero);
-                List<int[]> transitor = new List<int[]>();
+                List<int[]> transitor = new List<int[]>(resultado);
+                
                 foreach (var item in resultado)
                 {
+                    int i = 0;
+                    foreach (var subitem in resultado)
+                    {
+                        
+                        if (item.SequenceEqual(subitem))
+                        {
+                            i++;
+                        }
+                        if (i> 1)
+                        {
+                            transitor.Remove(subitem);
+                            i--;
+                        }
+                    }
+                }
+                foreach (var item in transitor)
+                {
+
                     Console.WriteLine("[{0}]", string.Join(", ", item));
                     
                 }
                 
             }
         }
+  
 
         public static List<int[]> Quebra(int quebrado)
         {
