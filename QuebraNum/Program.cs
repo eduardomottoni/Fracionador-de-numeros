@@ -109,6 +109,11 @@ namespace QuebraNum
             {
 
                 Array.Sort(item, (x, y) => x.CompareTo(y));
+
+                Array.Sort<int>(item,
+                    new Comparison<int>(
+                            (i1, i2) => i2.CompareTo(i1)
+                    ));
             }
             //resultado = resultado.OrderByDescending(x => x.Last()).ToList();
             resultado = CompararListas(resultado);
