@@ -21,12 +21,12 @@ namespace QuebraNum
                 
 
                 resultado = CompararListas(resultado);
-                resultado = resultado.OrderByDescending(x => x.Last()).ToList();
+                resultado = resultado.OrderByDescending(x => x.First()).ToList();
                 foreach (var item in resultado)
                 {
 
                     Console.WriteLine("[{0}]", string.Join(", ", item));
-
+                    
                 }
 
             }
@@ -107,8 +107,6 @@ namespace QuebraNum
 
             foreach (var item in resultado)
             {
-
-                Array.Sort(item, (x, y) => x.CompareTo(y));
 
                 Array.Sort<int>(item,
                     new Comparison<int>(
