@@ -11,3 +11,7 @@ This is a NP that grows exponentialy. Returns until 30, after that, it is to slo
 1 - Half the number (h)<br>
 2 - If the number is even, the first array is [h , h]; else, it is [h , h-1]<br>
 3 - After that, a loop make goes trying to sum the bigest combinations, until it lefts [1 , 1, ... , 1^h]<br>
+
+
+### Possible improvment:
+Register the list<array> for numbers, i.e. the list for 3 is equal the list of 2 + 1
